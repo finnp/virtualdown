@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/finnp/virtual-leveldown.git"
+    "url": "https://github.com/finnp/virtualdown.git"
   },
   "keywords": [
     "virtual",
     "level"
   ],
   "bugs": {
-    "url": "https://github.com/finnp/virtual-leveldown/issues"
+    "url": "https://github.com/finnp/virtualdown/issues"
   },
-  "homepage": "https://github.com/finnp/virtual-leveldown"
+  "homepage": "https://github.com/finnp/virtualdown"
 }
