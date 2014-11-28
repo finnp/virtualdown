@@ -1,7 +1,7 @@
 {
-  "name": "virtual-leveldown",
+  "name": "virtualdown",
   "version": "1.0.0",
-  "description": "Use a leveldb instance virtually without changing the original",
+  "description": "Wrap a leveldown module as a virtual database",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
