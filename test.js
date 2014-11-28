@@ -1,30 +1,34 @@
 var test       = require('tape')
   , testCommon = require('abstract-leveldown/testCommon')
-  , VirtualDOWN    = require('./')
+  , virtualDOWN    = require('./')
+  , memdown = require('memdown')
+
+var testDOWN = virtualDOWN(memdown)
 
 /*** compatibility with basic LevelDOWN API ***/
 
-require('abstract-leveldown/abstract/open-test').all(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/open-test').args(testDOWN, test, testCommon)
+require('abstract-leveldown/abstract/open-test').open(testDOWN, test, testCommon)
 
-require('abstract-leveldown/abstract/del-test').all(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/del-test').all(testDOWN, test, testCommon)
 
-require('abstract-leveldown/abstract/get-test').all(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/get-test').all(testDOWN, test, testCommon)
 
-require('abstract-leveldown/abstract/put-test').all(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/put-test').all(testDOWN, test, testCommon)
 
-require('abstract-leveldown/abstract/put-get-del-test').all(VirtualDOWN, test, testCommon, new Buffer('testtest'))
+require('abstract-leveldown/abstract/put-get-del-test').all(testDOWN, test, testCommon, new Buffer('testtest'))
 
-require('abstract-leveldown/abstract/batch-test').all(VirtualDOWN, test, testCommon)
-// require('abstract-leveldown/abstract/chained-batch-test').all(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/batch-test').all(testDOWN, test, testCommon)
+// require('abstract-leveldown/abstract/chained-batch-test').all(testDOWN, test, testCommon)
 
-require('abstract-leveldown/abstract/close-test').close(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/close-test').close(testDOWN, test, testCommon)
 
-require('abstract-leveldown/abstract/iterator-test').all(VirtualDOWN, test, testCommon)
+require('abstract-leveldown/abstract/iterator-test').all(testDOWN, test, testCommon)
 
-var level = require('leveldown')
+var level = require('memdown')
 test('working with original copy', function (t) {
   var location = testCommon.location()
-  var virtualDB = VirtualDOWN(location)
+  var virtualDB = testDOWN(location)
   
   var testData = [
     {type: 'put', key: '01', value: 'cat'},

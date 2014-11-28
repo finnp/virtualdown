@@ -1,13 +1,10 @@
-# virtual-leveldown
-Windows | Mac/Linux
-------- | ---------
-[![Windows Build status](http://img.shields.io/appveyor/ci/finnp/virtual-leveldown.svg)](https://ci.appveyor.com/project/finnp/virtual-leveldown/branch/master) | [![Build Status](https://travis-ci.org/finnp/virtual-leveldown.svg?branch=master)](https://travis-ci.org/finnp/virtual-leveldown)
+# virtualdown
 
-LevelDOWN drop-in replacement that reads from a leveldb store, but writes
-to memory. It behaves like a leveldown, but all changes (put / del) are only made
-in memory, so that the original leveldb instance remains unchanged.
+LevelDOWN drop-in replacement that reads from a leveldown store, but writes
+to memory. It behaves like any leveldown, but all changes (put / del) are only made
+in memory, so that the original leveldown instance remains unchanged.
 
-Install with `npm install virtual-leveldown`
+Install with `npm install virtualdown`
 
 ## example
 
